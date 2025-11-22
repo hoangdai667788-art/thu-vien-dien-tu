@@ -1,0 +1,11 @@
+node_modules/
+.env
+dist/
+build/
+.DS_Store
+
+# Bỏ qua file upload (nhưng giữ lại thư mục)
+backend/public/uploads/*
+!backend/public/uploads/.gitkeep
+backend/public/covers/*
+!backend/public/covers/.gitkeep
