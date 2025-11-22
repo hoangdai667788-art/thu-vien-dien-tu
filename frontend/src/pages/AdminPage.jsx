@@ -29,7 +29,7 @@ function AdminPage() {
   // (Các hàm logic - không đổi)
   const fetchBooks = async () => {
     try {
-      const response = await axios.get('http://localhost:4000/api/books');
+      const response = await axios.get('https://thu-vien-dien-tu-backend.onrender.com//api/books');
       setBooks(response.data);
     } catch (error) { console.error('Lỗi khi tải danh sách sách:', error); }
   };
@@ -42,7 +42,7 @@ function AdminPage() {
     const formData = new FormData();
     formData.append('file', selectedFile); 
     try {
-      const response = await axios.post('http://localhost:4000/api/upload/file', formData, { headers: { 'Content-Type': 'multipart/form-data' } });
+      const response = await axios.post('https://thu-vien-dien-tu-backend.onrender.com//api/upload/file', formData, { headers: { 'Content-Type': 'multipart/form-data' } });
       setFilePath(response.data.filePath); 
       alert('Tải file sách thành công!');
     } catch (error) {
@@ -59,7 +59,7 @@ function AdminPage() {
     const formData = new FormData();
     formData.append('cover', selectedFile); 
     try {
-      const response = await axios.post('http://localhost:4000/api/upload/cover', formData, { headers: { 'Content-Type': 'multipart/form-data' } });
+      const response = await axios.post('https://thu-vien-dien-tu-backend.onrender.com//api/upload/cover', formData, { headers: { 'Content-Type': 'multipart/form-data' } });
       setCoverImagePath(response.data.coverPath); 
       alert('Tải ảnh bìa thành công!');
     } catch (error) {
@@ -77,7 +77,7 @@ function AdminPage() {
     }
     const newBook = { title, author, filePath, isPremium, coverImagePath }; 
     try {
-      await axios.post('http://localhost:4000/api/books', newBook);
+      await axios.post('https://thu-vien-dien-tu-backend.onrender.com//api/books', newBook);
       alert('Thêm sách thành công!');
       fetchBooks(); 
       setTitle(''); setAuthor(''); setFilePath(''); setCoverImagePath(''); setIsPremium(false);
@@ -91,7 +91,7 @@ function AdminPage() {
   const handleDelete = async (bookId) => {
     if (window.confirm('Bạn có chắc chắn muốn xóa cuốn sách này?')) {
       try {
-        await axios.delete(`http://localhost:4000/api/books/${bookId}`);
+        await axios.delete(`https://thu-vien-dien-tu-backend.onrender.com//api/books/${bookId}`);
         alert('Xóa sách thành công!');
         fetchBooks(); 
       } catch (error) {

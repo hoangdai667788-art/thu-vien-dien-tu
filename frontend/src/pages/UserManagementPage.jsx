@@ -16,7 +16,7 @@ function UserManagementPage() {
   const fetchUsers = async () => {
     try {
       // Gọi API lấy danh sách
-      const response = await axios.get('http://localhost:4000/api/users');
+      const response = await axios.get('https://thu-vien-dien-tu-backend.onrender.com//api/users');
       setUsers(response.data);
     } catch (error) {
       console.error("Lỗi API:", error);
@@ -36,7 +36,7 @@ function UserManagementPage() {
 
   const handleUpgrade = async (userId) => {
     try {
-      await axios.put(`http://localhost:4000/api/users/${userId}/upgrade`, { duration });
+      await axios.put(`https://thu-vien-dien-tu-backend.onrender.com//api/users/${userId}/upgrade`, { duration });
       alert('Nâng cấp thành công!');
       fetchUsers();
     } catch (error) {

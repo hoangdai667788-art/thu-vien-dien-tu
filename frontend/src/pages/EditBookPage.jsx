@@ -18,7 +18,7 @@ function EditBookPage() {
     const fetchBook = async () => {
       try {
         // Thử gọi API
-        const response = await axios.get(`http://localhost:4000/api/books/${id}`);
+        const response = await axios.get(`https://thu-vien-dien-tu-backend.onrender.com//api/books/${id}`);
         // Nếu thành công, điền dữ liệu
         setTitle(response.data.title);
         setAuthor(response.data.author);
@@ -35,7 +35,7 @@ function EditBookPage() {
   const handleUpdate = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`http://localhost:4000/api/books/${id}`, { title, author });
+      await axios.put(`https://thu-vien-dien-tu-backend.onrender.com//api/books/${id}`, { title, author });
       alert('Cập nhật thành công!');
       navigate('/admin');
     } catch (error) {

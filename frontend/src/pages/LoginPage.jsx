@@ -19,7 +19,7 @@ function LoginPage() {
     e.preventDefault(); 
     try {
       const response = await axios.post(
-        'http://localhost:4000/api/auth/login',
+        'https://thu-vien-dien-tu-backend.onrender.com//api/auth/login',
         { email: email, password: password }
       );
       const { token, user } = response.data;

@@ -18,7 +18,7 @@ function HomePage() {
     const fetchBooks = async () => {
       try {
         // Gọi đến API backend (axios)
-        const response = await axios.get('http://localhost:4000/api/books');
+        const response = await axios.get('https://thu-vien-dien-tu-backend.onrender.com//api/books');
         // Lưu sách vào state
         setAllBooks(response.data);
       } catch (error) {

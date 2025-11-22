@@ -23,7 +23,7 @@ function RegisterPage() {
     
     try {
       const response = await axios.post(
-        'http://localhost:4000/api/auth/register',
+        'https://thu-vien-dien-tu-backend.onrender.com//api/auth/register',
         { email: email, password: password }
       );
       alert(response.data.message);

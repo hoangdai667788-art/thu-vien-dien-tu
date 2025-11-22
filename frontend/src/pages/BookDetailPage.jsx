@@ -11,7 +11,7 @@ function BookDetailPage() {
   useEffect(() => {
     const fetchBook = async () => {
       try {
-        const response = await axios.get(`http://localhost:4000/api/books/${id}`);
+        const response = await axios.get(`https://thu-vien-dien-tu-backend.onrender.com//api/books/${id}`);
         setBook(response.data); 
       } catch (error) {
         console.error('Lỗi khi tải chi tiết sách:', error);
@@ -44,7 +44,7 @@ function BookDetailPage() {
     if (currentUser.role === 'admin') {
       return (
         <a 
-          href={`http://localhost:4000${book.filePath}`} 
+          href={`https://thu-vien-dien-tu-backend.onrender.com/${book.filePath}`} 
           target="_blank"
           rel="noopener noreferrer"
           style={readButtonStyle}
@@ -66,7 +66,7 @@ function BookDetailPage() {
     // 4. Các trường hợp còn lại (Sách Free, hoặc User là Premium)
     return (
       <a 
-        href={`http://localhost:4000${book.filePath}`} 
+        href={`https://thu-vien-dien-tu-backend.onrender.com/${book.filePath}`} 
         target="_blank"
         rel="noopener noreferrer"
         style={readButtonStyle}
