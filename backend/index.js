@@ -35,3 +35,4 @@ app.get('/', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server Backend đang chạy tại http://localhost:${PORT}`);
 });
+// Cap nhat deploy len Render lan cuoi
