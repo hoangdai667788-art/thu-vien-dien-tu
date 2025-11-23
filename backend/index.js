@@ -1,8 +1,8 @@
+require('dotenv').config(); // <-- 1. THÊM DÒNG NÀY Ở ĐẦU
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const path = require('path'); 
-require('dotenv').config(); // <-- 1. THÊM DÒNG NÀY Ở ĐẦU
 
 const authRoutes = require('./routes/auth.route.js');
 const bookRoutes = require('./routes/book.route.js');
@@ -35,4 +35,4 @@ app.get('/', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server Backend đang chạy tại http://localhost:${PORT}`);
 });
-// Cap nhat deploy len Render lan cuoi
+// Cap nhat deploy 
